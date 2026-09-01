@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ランダム単語</title>
+
+  <style>
+    #b {
+      display: block;
+      margin: 90px auto;
+      padding: 10px 20px;
+      font-size: 20px;
+    }
+
+    #r {
+      text-align: center;
+      font-size: 30px;
+      margin-top: 20px;
+    }
+  </style>
+
+</head>
+<body>
+
+<button id="b">スタート！</button>
+<p id="r"></p>
+
+<script>
+  const w = ["千葉", "松戸", "野田", "銚子", "我孫子"];
+  const a = ["寝る", "遊ぶ", "食べる", "歩く", "走る"];
+
+  b.onclick = () => {
+    const A = w[Math.floor(Math.random() * w.length)];
+    const B = a[Math.floor(Math.random() * a.length)];
+    r.textContent = A + "で" + B;
+  };
+</script>
+
+</body>
+</html>
 
