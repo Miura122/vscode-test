@@ -15,9 +15,9 @@
       font-size: 30px;
       margin-top: 20px;
     }
-    #b {
+    #b, #next {
       display: block;
-      margin: 90px auto;
+      margin: 30px auto;
       padding: 10px 20px;
       font-size: 20px;
     }
@@ -30,7 +30,7 @@
 
     #img {
       display: block;
-      margin: 0 auto -20px; /* ← ここで文字を上に動かす */
+      margin: 0 auto -20px;
       width: 300px;
     }
   </style>
@@ -41,8 +41,9 @@
 
 <body>
 
-
 <button id="b">スタート！</button>
+<button id="next">進む駅数</button>
+
 <p id="r"></p>
 
 <script>
@@ -92,10 +93,18 @@
 
   const a = ["寝る", "遊ぶ", "食べる", "歩く", "走る"];
 
+
   b.onclick = () => {
     const A = w[Math.floor(Math.random() * w.length)];
     const B = a[Math.floor(Math.random() * a.length)];
     r.textContent = A + "駅で" + B;
+  };
+
+
+  const next = document.getElementById("next");
+  next.onclick = () => {
+    const n = Math.floor(Math.random() * 6) + 1;
+    r.textContent = n + "駅すすむ";
   };
 </script>
 
